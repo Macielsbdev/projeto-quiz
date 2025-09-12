@@ -27,7 +27,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     const questaoSelecionada = new QuestaoModel(
       unicaQuestaoOuNada.id,
       unicaQuestaoOuNada.enunciado,
-      embaralharRespostas(unicaQuestaoOuNada.respostas)  // ← Nome correto!
+      embaralharRespostas(unicaQuestaoOuNada.respostas)
     );
     res.status(200).json(questaoSelecionada);
   } else {
