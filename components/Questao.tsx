@@ -23,19 +23,18 @@ export default function Questao(props: QuestaoProps) {
 const questao = props.valor
 
 function renderizarRespostas() {
-    return questao.respostas.map((resposta, i) => {
+    return questao.respostas?.map((resposta, i) => {
         return (
-
-            <Resposta
-            key={`${questao.id}-${i}`} 
-            valor={resposta}
-            indice={i}
-            letra={letras[i].valor}
-            corFundoLetra={letras[i].cor}
-            respostaFornecida={props.respostaFornecida}
+            <Resposta 
+                key={`${questao.id}-${i}`}
+                valor={resposta}
+                indice={i}
+                letra={letras[i]?.valor || ''}
+                corFundoLetra={letras[i]?.cor || '#000'}
+                respostaFornecida={props.respostaFornecida}
             />
-        ) 
-    })
+        );
+    }) || [];
 }
 
 return (

@@ -29,7 +29,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
       unicaQuestaoOuNada.enunciado,
       embaralharRespostas(unicaQuestaoOuNada.respostas)
     );
-    res.status(200).json(questaoSelecionada);
+    res.status(200).json(questaoSelecionada.paraObjeto());
   } else {
     res.status(404).json({
       error: `Questão com ID ${idSelecionado} não encontrada`
